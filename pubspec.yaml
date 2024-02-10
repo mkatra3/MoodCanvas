@@ -24,7 +24,10 @@ flutter:
 
 
   assets:
-    - assets/Animals/
+    - assets/Animals/Bunny/
+    - assets/Animals/Chicken/
+    - assets/Animals/Lizard/
+    - assets/Animals/Panda/
     - assets/moods/
     - assets/logo_colors/
     - assets/ResourcePics/
