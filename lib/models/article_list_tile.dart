@@ -25,14 +25,13 @@ class _ArticleTileState extends State<ArticleTile> {
         width: double.infinity,
         margin: const EdgeInsets.only(bottom: 20.0),
         padding: const EdgeInsets.all(12.0),
-        height: 130,
         decoration: BoxDecoration(
           color: Colors.black,
           borderRadius: BorderRadius.circular(26.0),
         ),
         child: Row(
           children: [
-            Flexible(
+            Expanded(
               flex: 3,
               child: Hero(
                 tag: widget.data.title,
@@ -41,7 +40,7 @@ class _ArticleTileState extends State<ArticleTile> {
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(8.0),
                     image: DecorationImage(
-                      image: NetworkImage(widget.data.urlToImage),
+                      image: AssetImage(widget.data.urlToImage),
                       fit: BoxFit.fitHeight,
                     ),
                   ),

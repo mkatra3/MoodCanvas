@@ -25,7 +25,7 @@ class _PopStudiesCardState extends State<PopStudiesCard> {
           borderRadius: BorderRadius.circular(30.0),
           image: DecorationImage(
             fit: BoxFit.fill,
-            image: NetworkImage(widget.data.urlToImage),
+            image: AssetImage(widget.data.urlToImage),
           ),
         ),
         child: Container(

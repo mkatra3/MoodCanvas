@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 import '/models/article_data.dart'; // Ensure this path matches your project structure
 
 class ArticleDetailsScreen extends StatefulWidget {
@@ -15,13 +16,12 @@ class _ArticleDetailsScreenState extends State<ArticleDetailsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        // Adding an AppBar
-        title: const Text('Article Details'), // You can customize this title
-        backgroundColor: Colors.transparent, // Makes AppBar background transparent
-        elevation: 0, // Removes shadow
+        title: const Text('Article Details'),
+        backgroundColor: Colors.transparent,
+        elevation: 0,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.black), // Customizes back button color
-          onPressed: () => Navigator.of(context).pop(), // Navigates back to previous screen
+          icon: const Icon(Icons.arrow_back, color: Colors.black),
+          onPressed: () => Navigator.of(context).pop(),
         ),
       ),
       body: Padding(
@@ -37,29 +37,31 @@ class _ArticleDetailsScreenState extends State<ArticleDetailsScreen> {
                 fontWeight: FontWeight.bold,
               ),
             ),
-            const SizedBox(
-              height: 8.0,
-            ),
+            const SizedBox(height: 8.0),
             Text(
               widget.data.author,
-              style: const TextStyle(
-                color: Colors.black54,
+              style: const TextStyle(color: Colors.black54),
+            ),
+            const SizedBox(height: 20.0),
+            GestureDetector(
+              onTap: () async {
+                final url = widget.data.;
+                if (await canLaunch(url)) {
+                  await launch(url);
+                } else {
+                  print('Could not launch $url');
+                }
+              },
+              child: Hero(
+                tag: widget.data.title,
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(30.0),
+                  child: Image.asset(widget.data.urlToImage),
+                ),
               ),
             ),
-            const SizedBox(
-              height: 20.0,
-            ),
-            Hero(
-              tag: widget.data.title, // Assuming title is unique for each article
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(30.0),
-                child: Image.network(widget.data.urlToImage),
-              ),
-            ),
-            const SizedBox(
-              height: 30.0,
-            ),
-            Text(widget.data.content)
+            const SizedBox(height: 30.0),
+            Text(widget.data.content),
           ],
         ),
       ),

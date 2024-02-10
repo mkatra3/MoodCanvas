@@ -24,14 +24,14 @@ class ArticleData {
        "Psychology Today",
        "Understanding the science behind habit formation reveals that habits are easier to create or change than commonly thought...",
        "2023-01-01",
-       "assets/ResourcePics/The_Science_of_Habits_Psychology_Today.webp",
+       "assets/ResourcePics/The_Science_of_Habits_Psychology_Today.png",
     ),
     ArticleData(
        "The Science of Habit: How to Rewire Your Brain",
        "Unknown",
        "Despite 44% of Americans making New Year's resolutions, nearly half fail due to the lack of practicing...",
        "2023-01-02",
-       "assets/ResourcePics/The_Science_of_Habit_How_to_Rewire_Your_Brain.webp",
+       "assets/ResourcePics/The_Science_of_Habit_How_to_Rewire_Your_Brain.png",
     ),
     ArticleData(
        "The Neuroscience of Habits: How They Form and How to Change Them [Excerpt] | Scientific American",
@@ -61,13 +61,7 @@ class ArticleData {
        "2023-01-06",
        "assets/ResourcePics/Dreaming_Up_a_Good_Mood_Psychology_Today.jpeg",
     ),
-    ArticleData(
-       "These habits can cut the risk of depression in half, a new study finds.",
-       "NPR",
-       "NPR article about how maintaining daily habits can reduce depression and other negative emotions...",
-       "2023-01-07",
-       "assets/ResourcePics/These_habits_can_cut_the_risk_of_depression_in_half_a_new_study_finds..png",
-    ),];
+    ];
 
   static List<ArticleData> recentNewsData = [
     ArticleData(
@@ -148,14 +142,6 @@ class ArticleData {
       "Journaling is a great tool for processing emotions and feelings. Learn more about the benefits...",
       "2023-01-17",
       "assets/ResourcePics/15_Benefits_of_Journaling_and_Tips_for_Getting_Started.png",
-    ),
-
-    ArticleData(
-      "How monitoring your mood can help your mental health",
-      "Unknown",
-      "A blog post discussing the benefits of mood tracking. The blog lists different types of trackers, including apps, but also discusses as well as patterns, triggers, and communication methods...",
-      "2023-01-18",
-      "assets/ResourcePics/How_monitoring_your_mood_can_help_your_mental_health.png",
     ),
   ];
 }
