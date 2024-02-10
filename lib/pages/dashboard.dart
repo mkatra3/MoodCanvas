@@ -1,25 +1,16 @@
 import 'package:flutter/material.dart';
+import '../widgets/app_drawer.dart'; // Import the AppDrawer
 
-class DashboardPage extends StatefulWidget {
-  @override
-  _DashboardPageState createState() => _DashboardPageState();
-}
-
-class _DashboardPageState extends State<DashboardPage> {
+class DashboardPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Mood Canvas'),
+        title: Text('Dashboard'),
       ),
+      drawer: AppDrawer(), // Add the AppDrawer here
       body: Center(
-        child: Text('Dashboard Page'),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          // Action to add a new journal entry
-        },
-        child: Icon(Icons.add),
+        child: Text('This is the Dashboard Page'),
       ),
     );
   }
