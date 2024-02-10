@@ -20,6 +20,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'TODO List App',
       theme: appTheme, // This now uses ColorScheme for theming
       initialRoute: '/',

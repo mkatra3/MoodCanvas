@@ -21,7 +21,7 @@ class AppDrawer extends StatelessWidget {
                 CircleAvatar(
                   backgroundColor: Colors.transparent,
                   radius: 40, // Adjust the radius as needed
-                  backgroundImage: AssetImage('assets/Animals/Lizard/baby_lizard.PNG'), // Replace with your actual asset path
+                  backgroundImage: AssetImage('assets/Animals/Lizard/baby_lizard.png'), // Replace with your actual asset path
                 ),
                 SizedBox(height: 10), // Add some space between the avatar and the text
                 Text(

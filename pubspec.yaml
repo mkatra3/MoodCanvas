@@ -24,6 +24,7 @@ flutter:
 
 
   assets:
+    - assets/Animals/
     - assets/Animals/Bunny/
     - assets/Animals/Chicken/
     - assets/Animals/Lizard/
