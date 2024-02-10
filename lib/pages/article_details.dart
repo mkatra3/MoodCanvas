@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 import '/models/article_data.dart'; // Ensure this path matches your project structure
 
 class ArticleDetailsScreen extends StatefulWidget {
@@ -46,8 +47,8 @@ class _ArticleDetailsScreenState extends State<ArticleDetailsScreen> {
             GestureDetector(
               onTap: () async {
                 final url = widget.data.URL;
-                if (await canLaunch(url)) {
-                  await launch(url);
+                if (await canLaunchUrlString(url)) {
+                  await launchUrlString(url);
                 } else {
                   print('Could not launch $url');
                 }
