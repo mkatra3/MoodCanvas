@@ -12,7 +12,7 @@ class AppDrawer extends StatelessWidget {
         children: <Widget>[
           const DrawerHeader(
             decoration: BoxDecoration(
-              color: orange,
+              color: darkblue,
             ),
             child: Text(
               'Navigation',

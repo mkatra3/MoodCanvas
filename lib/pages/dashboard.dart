@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:moodcanvas/models/colors.dart';
 import 'package:moodcanvas/widgets/inputDialog.dart';
 import 'package:provider/provider.dart';
 import '../appState.dart';
-import '../models/journal.dart';
 import '../widgets/app_drawer.dart'; // Import the AppDrawer
 import '../widgets/progress_bar.dart'; // Import the ProgressBar
 
@@ -95,14 +95,16 @@ class _JournalEntriesList extends State<JournalEntriesList> {
           itemCount: state.tempJournal.journals.length,
           itemBuilder: (BuildContext context, int index) {
             return Container(
-                margin: const EdgeInsets.all(5),
-                color: Colors.blue,
+                margin: const EdgeInsets.all(0),
+                color: beige,
                 child: Padding(
                   padding: const EdgeInsets.all(10),
                   child: Text(state.tempJournal.journals[index]),
                 ));
           },
-          separatorBuilder: (BuildContext context, int index) => const Divider(),
+          separatorBuilder: (BuildContext context, int index) => const Divider(
+            color: blueish,
+          ),
         );
       },
     );

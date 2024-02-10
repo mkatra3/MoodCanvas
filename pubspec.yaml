@@ -13,6 +13,7 @@ dependencies:
   provider: ^6.1.1
   carousel_slider: ^4.2.1
   google_fonts:
+  url_launcher:
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -22,7 +23,8 @@ flutter:
   uses-material-design: true
 
 
-assets:
-  assets/Animals
-  assets/moods
-  assets/logo_colors
+  assets:
+    - assets/Animals/
+    - assets/moods/
+    - assets/logo_colors/
+    - assets/ResourcePics/
