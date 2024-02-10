@@ -32,16 +32,17 @@ class _ProgressBar extends State<ProgressBar> with TickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.all(20.0),
-        child: LinearProgressIndicator(
-          minHeight: 50,
-          value: 0.5,
-          valueColor: AlwaysStoppedAnimation(Colors.blue),
-          semanticsLabel: 'Linear progress indicator',
-        ),
-      ),
-    );
+    return const RotatedBox(
+        quarterTurns: -1,
+        child: Padding(
+            padding: EdgeInsets.all(20),
+            child: LinearProgressIndicator(
+              minHeight: 40,
+              value: 0.5,
+              valueColor: AlwaysStoppedAnimation(Colors.blue),
+              semanticsLabel: 'Linear progress indicator',
+            ),
+          ),
+        );
   }
 }
