@@ -18,8 +18,6 @@ class ArticleData {
     this.URL,
   );
 
-  //we will use dummy data to generate the news,but you can use a third party api or your own backend to extract the data
-  //I will copy the data from my previous code, you can create your own data , I used newsApi to get the data
   static List<ArticleData> breakingNewsData = [
     ArticleData(
        "The Science of Habits | Psychology Today",
