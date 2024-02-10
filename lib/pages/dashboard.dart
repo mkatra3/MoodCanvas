@@ -7,9 +7,26 @@ import '../widgets/app_drawer.dart'; // Import the AppDrawer
 import '../widgets/progress_bar.dart'; // Import the ProgressBar
 import 'package:carousel_slider/carousel_slider.dart';
 
-var imagesInSlider = [const Image(width: 250, height: 250, image: NetworkImage('https://flutter.github.io/assets-for-api-docs/assets/widgets/owl.jpg')),
-  const Image(width: 250, height: 250, image: NetworkImage('https://flutter.github.io/assets-for-api-docs/assets/widgets/owl-2.jpg'))];
-
+var imagesInSlider = [
+  const Image(
+      width: 250,
+      height: 250,
+      image: AssetImage('assets/GroupPics/IMG_4836.jpeg')),
+  const Image(
+      width: 250,
+      height: 250,
+      image: AssetImage('assets/GroupPics/IMG_4837.jpeg')),
+  const Image(
+      width: 250, height: 250, image: AssetImage('assets/GroupPics/abu.jpg')),
+  const Image(
+      width: 250,
+      height: 250,
+      image: AssetImage('assets/GroupPics/annie.jpg')),
+  const Image(
+      width: 250,
+      height: 250,
+      image: AssetImage('assets/GroupPics/bilal.jpg')),
+];
 
 class DashboardPage extends StatelessWidget {
   const DashboardPage({super.key});
@@ -20,8 +37,10 @@ class DashboardPage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('My Canvas'),
         actions: [
-          Text(Provider.of<AppData>(context, listen: false).tempJournal.emoji,
-          style: TextStyle(fontSize: 24),)
+          Text(
+            Provider.of<AppData>(context, listen: false).tempJournal.emoji,
+            style: TextStyle(fontSize: 24),
+          )
         ],
       ),
       drawer: const AppDrawer(), // Add the AppDrawer here
@@ -74,14 +93,15 @@ class DashboardPage extends StatelessWidget {
 class Carousel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Expanded(child: CarouselSlider(items: imagesInSlider,
-        options: CarouselOptions(
-          height: 200,
-          autoPlay: true,
-          autoPlayCurve: Curves.fastOutSlowIn,
-          autoPlayAnimationDuration: const Duration(milliseconds: 1000),
-        ))
-    );
+    return Expanded(
+        child: CarouselSlider(
+            items: imagesInSlider,
+            options: CarouselOptions(
+              height: 200,
+              autoPlay: true,
+              autoPlayCurve: Curves.fastOutSlowIn,
+              autoPlayAnimationDuration: const Duration(milliseconds: 1000),
+            )));
   }
 }
 
