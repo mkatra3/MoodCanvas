@@ -42,8 +42,8 @@ class _HabitsPage extends State<HabitsPage> {
         Flexible(
             flex: 1, child: RotatedBox(quarterTurns: -1, child: ProgressBar()))
       ]),
-      floatingActionButton:
-          FloatingActionButton(onPressed: () {}, child: const Icon(Icons.add)),
+      /*floatingActionButton:
+          FloatingActionButton(onPressed: () {}, child: const Icon(Icons.add)),*/
     );
   }
 }
