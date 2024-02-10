@@ -38,7 +38,7 @@ replace [ ] with " [ x ]" when complete
 - [ ] Add Timeline of when recordings were made
 
 ## Habits Page
-- [ ] Include Checkboxes for the habits
+- [x] Include Checkboxes for the habits
 - [ ] Make habits Editable
 - [ ] Reuse the same progress bar as dashboard page
 
