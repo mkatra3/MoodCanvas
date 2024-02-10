@@ -6,8 +6,8 @@ import '../appState.dart';
 import '../widgets/app_drawer.dart'; // Import the AppDrawer
 import '../widgets/progress_bar.dart'; // Import the ProgressBar
 
-class DashboardPage extends StatelessWidget {
-  const DashboardPage({super.key});
+class DashboardPage2 extends StatelessWidget {
+  const DashboardPage2({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -37,28 +37,7 @@ class DashboardPage extends StatelessWidget {
           ),
         ],
       )),
-      floatingActionButton: FloatingActionButton(
-        child: const Icon(Icons.add),
-        onPressed: () {
-        showDialog(
-            context: context,
-            builder: (BuildContext context) {
-              return CustomAlertDialog(placeholderText: 'Enter text...');
-            },
-          ).then((result) {
-            if (result != null) {
-              // Handle the result (entered text)
-              // userInputText = result;
-              print('User input: $result');
-              Provider.of<AppData>(context, listen: true).addEntry(result);
-              // setState(() {
-              //   habitList.add(result);
-              // });
-              
-            }
-          });
-        },
-      ),
+      
     );
   }
 }
@@ -92,14 +71,14 @@ class _JournalEntriesList extends State<JournalEntriesList> {
       builder: (context, state, child) {
         return ListView.separated(
           padding: const EdgeInsets.all(8),
-          itemCount: state.tempJournal.journals.length,
+          itemCount: state.tempJournal2.journals.length,
           itemBuilder: (BuildContext context, int index) {
             return Container(
                 margin: const EdgeInsets.all(0),
                 color: beige,
                 child: Padding(
                   padding: const EdgeInsets.all(10),
-                  child: Text(state.tempJournal.journals[index]),
+                  child: Text(state.tempJournal2.journals[index]),
                 ));
           },
           separatorBuilder: (BuildContext context, int index) => const Divider(

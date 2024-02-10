@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:moodcanvas/pages/dashboard%20copy.dart';
 import 'package:table_calendar/table_calendar.dart';
 import '../widgets/app_drawer.dart'; 
 
@@ -36,6 +37,10 @@ class _CalendarPageState extends State<CalendarPage> {
                 _selectedDay = selectedDay;
                 _focusedDay = focusedDay;
               });
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const DashboardPage2()),
+              );
             },
             onFormatChanged: (format) {
               if (_calendarFormat != format) {

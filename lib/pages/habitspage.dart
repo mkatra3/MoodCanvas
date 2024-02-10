@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:moodcanvas/widgets/inputDialog.dart';
 import 'package:provider/provider.dart';
 import '../appState.dart';
 import '../models/habit.dart';
@@ -30,14 +31,28 @@ class _HabitsPage extends State<HabitsPage> {
             child: myList,
           ),
         ),
-        const Flexible(
-            flex: 1, child: ProgressBar()
-        )
+        const Flexible(flex: 1, child: ProgressBar())
       ]),
-      floatingActionButton:
-          FloatingActionButton(onPressed: () {
-
-          }, child: const Icon(Icons.add)),
+      floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            showDialog(
+              context: context,
+              builder: (BuildContext context) {
+                return CustomAlertDialog(placeholderText: 'Enter text...');
+              },
+            ).then((result) {
+              if (result != null) {
+                Provider.of<AppData>(context, listen: false).addhabit(result);
+                // Handle the result (entered text)
+                // userInputText = result;
+                print('User input: $result');
+                // setState(() {
+                //   habitList.add(result);
+                // });
+              }
+            });
+          },
+          child: const Icon(Icons.add)),
     );
   }
 }
@@ -86,8 +101,7 @@ class _HabitsListState extends State<HabitsList> {
         completedHabits++;
       }
     }
-    double completionRate = completedHabits/totalHabits;
+    double completionRate = completedHabits / totalHabits;
     Provider.of<AppData>(context, listen: false).updateRate(completionRate);
   }
-
 }
