@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import '../models/colors.dart';
 import '../appState.dart';
 
 class ProgressBar extends StatefulWidget {
@@ -22,7 +23,7 @@ class _ProgressBar extends State<ProgressBar> {
                 minHeight: 40,
                 value: state.completionRate,
                 backgroundColor: Colors.white54,
-                valueColor: const AlwaysStoppedAnimation(Colors.blue),
+                valueColor: const AlwaysStoppedAnimation(purp),
                 semanticsLabel: 'Linear progress indicator',
               );
             },
