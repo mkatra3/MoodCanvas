@@ -1,7 +1,7 @@
-import 'package:moodcanvas/models/habbit.dart';
+import 'package:moodcanvas/models/habit.dart';
 
 class Journal {
-  List<Habbit> habbits;
+  List<Habit> habbits;
   List<String> journals;
   String emoji; 
 
