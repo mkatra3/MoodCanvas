@@ -14,6 +14,10 @@ class DashboardPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('My Canvas'),
+        actions: [
+          Text(Provider.of<AppData>(context, listen: false).tempJournal.emoji,
+          style: TextStyle(fontSize: 24),)
+        ],
       ),
       drawer: const AppDrawer(), // Add the AppDrawer here
       body: Center(
@@ -40,7 +44,7 @@ class DashboardPage extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         child: const Icon(Icons.add),
         onPressed: () {
-        showDialog(
+          showDialog(
             context: context,
             builder: (BuildContext context) {
               return CustomAlertDialog(placeholderText: 'Enter text...');
@@ -54,7 +58,6 @@ class DashboardPage extends StatelessWidget {
               // setState(() {
               //   habitList.add(result);
               // });
-              
             }
           });
         },

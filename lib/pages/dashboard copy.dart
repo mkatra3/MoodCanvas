@@ -14,6 +14,12 @@ class DashboardPage2 extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('My Canvas'),
+        actions: [
+          Text(
+            Provider.of<AppData>(context, listen: false).tempJournal2.emoji,
+            style: TextStyle(fontSize: 24),
+          )
+        ],
       ),
       drawer: const AppDrawer(), // Add the AppDrawer here
       body: Center(
