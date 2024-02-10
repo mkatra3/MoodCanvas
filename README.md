@@ -27,11 +27,11 @@ replace [ ] with " [ x ]" when complete
   - [ ] Use smiley faces for ratings?
 
 ## Side bar
-  - [ ] Avatars for profile
-  - [x] Home Button
-  - [x] Habit Button
-  - [x] Calendar Button
-  - [x] Resources Button
+- [ ] Avatars for profile
+- [x] Home Button
+- [x] Habit Button
+- [x] Calendar Button
+- [x] Resources Button
 
 ## Calendar Page
 - [ ] Develop Day tracking feature
