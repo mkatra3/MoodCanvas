@@ -5,6 +5,11 @@ import 'package:provider/provider.dart';
 import '../appState.dart';
 import '../widgets/app_drawer.dart'; // Import the AppDrawer
 import '../widgets/progress_bar.dart'; // Import the ProgressBar
+import 'package:carousel_slider/carousel_slider.dart';
+
+var imagesInSlider = [const Image(width: 250, height: 250, image: NetworkImage('https://flutter.github.io/assets-for-api-docs/assets/widgets/owl.jpg')),
+  const Image(width: 250, height: 250, image: NetworkImage('https://flutter.github.io/assets-for-api-docs/assets/widgets/owl-2.jpg'))];
+
 
 class DashboardPage extends StatelessWidget {
   const DashboardPage({super.key});
@@ -27,10 +32,10 @@ class DashboardPage extends StatelessWidget {
             flex: 1,
             child: Container(
                 margin: const EdgeInsets.all(15),
-                child: const Row(
+                child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: <Widget>[
-                    ImagePlaceholder(),
+                    Carousel(),
                     const ProgressBar(),
                   ],
                 )),
@@ -66,16 +71,16 @@ class DashboardPage extends StatelessWidget {
   }
 }
 
-class ImagePlaceholder extends StatelessWidget {
-  const ImagePlaceholder({super.key});
-
+class Carousel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return const Image(
-      width: 250,
-      height: 250,
-      image: NetworkImage(
-          'https://flutter.github.io/assets-for-api-docs/assets/widgets/owl.jpg'),
+    return Expanded(child: CarouselSlider(items: imagesInSlider,
+        options: CarouselOptions(
+          height: 200,
+          autoPlay: true,
+          autoPlayCurve: Curves.fastOutSlowIn,
+          autoPlayAnimationDuration: const Duration(milliseconds: 1000),
+        ))
     );
   }
 }
