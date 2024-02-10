@@ -1,17 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import '../appState.dart';
 import '../models/journal.dart';
 import '../widgets/app_drawer.dart'; // Import the AppDrawer
 import '../widgets/progress_bar.dart'; // Import the ProgressBar
-
-Journal placeholderObject = Journal(habbits: [], journals: [
-  "This is entry number one",
-  "Entry number two trying to make it long text so we can see when the text wraps around",
-  "third entry just because",
-  "a",
-  "b",
-  "c",
-  "d",
-], emoji: "");
 
 class DashboardPage extends StatelessWidget {
   const DashboardPage({super.key});
@@ -77,19 +69,23 @@ class JournalEntriesList extends StatefulWidget {
 class _JournalEntriesList extends State<JournalEntriesList> {
   @override
   Widget build(BuildContext context) {
-    return ListView.separated(
-      padding: const EdgeInsets.all(8),
-      itemCount: placeholderObject.journals.length,
-      itemBuilder: (BuildContext context, int index) {
-        return Container(
-            height: 50,
-            margin: const EdgeInsets.all(5),
-            color: Colors.blue,
-            child: Center(
-              child: Text(placeholderObject.journals[index]),
-            ));
+    return Consumer<AppData>(
+      builder: (context, state, child) {
+        return ListView.separated(
+          padding: const EdgeInsets.all(8),
+          itemCount: state.tempJournal.journals.length,
+          itemBuilder: (BuildContext context, int index) {
+            return Container(
+                margin: const EdgeInsets.all(5),
+                color: Colors.blue,
+                child: Padding(
+                  padding: const EdgeInsets.all(10),
+                  child: Text(state.tempJournal.journals[index]),
+                ));
+          },
+          separatorBuilder: (BuildContext context, int index) => const Divider(),
+        );
       },
-      separatorBuilder: (BuildContext context, int index) => const Divider(),
     );
   }
 }
