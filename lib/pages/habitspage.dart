@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import '../appState.dart';
 import '../widgets/app_drawer.dart'; // Import the AppDrawer
 import '../widgets/progress_bar.dart'; // Import the ProgressBar
 
@@ -25,6 +27,8 @@ class HabitsPage extends StatefulWidget {
 }
 
 class _HabitsPage extends State<HabitsPage> {
+  HabitsList myList = const HabitsList();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,14 +36,14 @@ class _HabitsPage extends State<HabitsPage> {
         title: const Text('Habits'),
       ),
       drawer: const AppDrawer(), // Add the AppDrawer here
-      body: const Row(children: [
+      body: Row(children: [
         Flexible(
           flex: 3,
           child: Center(
-            child: HabitsList(),
+            child: myList,
           ),
         ),
-        Flexible(
+        const Flexible(
             flex: 1, child: ProgressBar()
         )
       ]),
@@ -74,10 +78,24 @@ class _HabitsListState extends State<HabitsList> {
               onChanged: (bool? value) {
                 setState(() {
                   habitList[index].completed = value!;
+                  updateRate(habitList);
                 });
               },
             ),
           );
         });
   }
+
+  void updateRate(List<HabitPlaceholder> habitList) {
+    int totalHabits = habitList.length;
+    double completedHabits = 0;
+    for (var e in habitList) {
+      if (e.completed) {
+        completedHabits++;
+      }
+    }
+    double _completionRate = completedHabits/totalHabits;
+    Provider.of<AppData>(context, listen: false).updateRate(_completionRate);
+  }
+
 }

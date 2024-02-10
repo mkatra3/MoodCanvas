@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import '../appState.dart';
 
 class ProgressBar extends StatefulWidget {
   const ProgressBar({super.key});
@@ -32,16 +34,21 @@ class _ProgressBar extends State<ProgressBar> with TickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
-    return const RotatedBox(
+    return  RotatedBox(
         quarterTurns: -1,
         child: Padding(
             padding: EdgeInsets.all(20),
-            child: LinearProgressIndicator(
-              minHeight: 40,
-              value: 0.5,
-              valueColor: AlwaysStoppedAnimation(Colors.blue),
-              semanticsLabel: 'Linear progress indicator',
-            ),
+            child: Consumer<AppData>(
+              builder: (context, state, child) {
+                return LinearProgressIndicator(
+                  minHeight: 40,
+                  value: state.completionRate,
+                  backgroundColor: Colors.white54,
+                  valueColor: const AlwaysStoppedAnimation(Colors.blue),
+                  semanticsLabel: 'Linear progress indicator',
+                );
+              },
+            )
           ),
         );
   }

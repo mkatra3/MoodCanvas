@@ -34,7 +34,7 @@ class DashboardPage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: <Widget>[
                     ImagePlaceholder(),
-                    ProgressBar(),
+                    const ProgressBar(),
                   ],
                 )),
           ),
@@ -45,8 +45,8 @@ class DashboardPage extends StatelessWidget {
         ],
       )),
       floatingActionButton: FloatingActionButton(
-          child: const Icon(Icons.add),
-        onPressed: () {  },
+        child: const Icon(Icons.add),
+        onPressed: () {},
       ),
     );
   }
