@@ -45,7 +45,7 @@ class _ArticleDetailsScreenState extends State<ArticleDetailsScreen> {
             const SizedBox(height: 20.0),
             GestureDetector(
               onTap: () async {
-                final url = widget.data.;
+                final url = widget.data.URL;
                 if (await canLaunch(url)) {
                   await launch(url);
                 } else {
