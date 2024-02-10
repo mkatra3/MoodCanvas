@@ -22,7 +22,7 @@ final ThemeData appTheme = ThemeData.from(
   ),
   textTheme: TextTheme(
     bodyLarge: TextStyle(color: green2),
-    bodyMedium: TextStyle(color: tan2),
+    bodyMedium: TextStyle(color: Colors.black),
   ),
   // Further customizations if needed
 );
