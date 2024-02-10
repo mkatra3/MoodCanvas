@@ -1,22 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../appState.dart';
+import '../models/habit.dart';
 import '../widgets/app_drawer.dart'; // Import the AppDrawer
 import '../widgets/progress_bar.dart'; // Import the ProgressBar
-
-class HabitPlaceholder {
-  late bool completed;
-  late String title;
-
-  HabitPlaceholder(this.title, this.completed);
-}
-
-// Populate HabitPlaceholder
-List<HabitPlaceholder> habitList = [
-  HabitPlaceholder("Habit 1", false),
-  HabitPlaceholder("Habit 2", false),
-  HabitPlaceholder("Habit 3", false),
-];
 
 // Habits Page
 class HabitsPage extends StatefulWidget {
@@ -47,8 +34,10 @@ class _HabitsPage extends State<HabitsPage> {
             flex: 1, child: ProgressBar()
         )
       ]),
-      /*floatingActionButton:
-          FloatingActionButton(onPressed: () {}, child: const Icon(Icons.add)),*/
+      floatingActionButton:
+          FloatingActionButton(onPressed: () {
+
+          }, child: const Icon(Icons.add)),
     );
   }
 }
@@ -62,40 +51,43 @@ class HabitsList extends StatefulWidget {
 }
 
 class _HabitsListState extends State<HabitsList> {
-
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-        padding: const EdgeInsets.all(8),
-        itemCount: habitList.length,
-        itemBuilder: (BuildContext context, int index) {
-          return SizedBox(
-            height: 50,
-            child: CheckboxListTile(
-              title: Text('Entry ${habitList[index].title}'),
-              value: habitList[index].completed,
-              controlAffinity: ListTileControlAffinity.leading,
-              onChanged: (bool? value) {
-                setState(() {
-                  habitList[index].completed = value!;
-                  updateRate(habitList);
-                });
-              },
-            ),
-          );
-        });
+    return Consumer<AppData>(
+      builder: (context, state, child) {
+        return ListView.builder(
+            padding: const EdgeInsets.all(8),
+            itemCount: state.tempJournal.habits.length,
+            itemBuilder: (BuildContext context, int index) {
+              return SizedBox(
+                height: 50,
+                child: CheckboxListTile(
+                  title: Text(state.tempJournal.habits[index].text),
+                  value: state.tempJournal.habits[index].checked,
+                  controlAffinity: ListTileControlAffinity.leading,
+                  onChanged: (bool? value) {
+                    setState(() {
+                      state.tempJournal.habits[index].checked = value!;
+                      updateRate(state.tempJournal.habits);
+                    });
+                  },
+                ),
+              );
+            });
+      },
+    );
   }
 
-  void updateRate(List<HabitPlaceholder> habitList) {
+  void updateRate(List<Habit> habitList) {
     int totalHabits = habitList.length;
     double completedHabits = 0;
     for (var e in habitList) {
-      if (e.completed) {
+      if (e.checked) {
         completedHabits++;
       }
     }
-    double _completionRate = completedHabits/totalHabits;
-    Provider.of<AppData>(context, listen: false).updateRate(_completionRate);
+    double completionRate = completedHabits/totalHabits;
+    Provider.of<AppData>(context, listen: false).updateRate(completionRate);
   }
 
 }
