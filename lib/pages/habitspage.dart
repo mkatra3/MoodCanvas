@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../widgets/app_drawer.dart'; // Import the AppDrawer
+import '../widgets/progress_bar.dart'; // Import the ProgressBar
 
 class HabitPlaceholder {
   late bool completed;
@@ -7,6 +8,13 @@ class HabitPlaceholder {
 
   HabitPlaceholder(this.title, this.completed);
 }
+
+// Populate HabitPlaceholder
+List<HabitPlaceholder> habitList = [
+  HabitPlaceholder("Habit 1", false),
+  HabitPlaceholder("Habit 2", false),
+  HabitPlaceholder("Habit 3", false),
+];
 
 // Habits Page
 class HabitsPage extends StatefulWidget {
@@ -21,17 +29,21 @@ class _HabitsPage extends State<HabitsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Habits'),
+        title: const Text('Habits'),
       ),
       drawer: AppDrawer(), // Add the AppDrawer here
-      body: Center(
-        child: HabitsList(),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-        },
-        child: const Icon(Icons.add)
-      ),
+      body: const Row(children: [
+        Flexible(
+          flex: 3,
+          child: Center(
+            child: HabitsList(),
+          ),
+        ),
+        Flexible(
+            flex: 1, child: RotatedBox(quarterTurns: -1, child: ProgressBar()))
+      ]),
+      floatingActionButton:
+          FloatingActionButton(onPressed: () {}, child: const Icon(Icons.add)),
     );
   }
 }
@@ -46,12 +58,6 @@ class HabitsList extends StatefulWidget {
 
 class _HabitsListState extends State<HabitsList> {
 
-  // Populate HabitPlaceholder
-  List<HabitPlaceholder> habitList =
-  [HabitPlaceholder("Task 1", false), HabitPlaceholder("Task 2", false),
-    HabitPlaceholder("Task 3", false),
-  ];
-
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
@@ -64,14 +70,13 @@ class _HabitsListState extends State<HabitsList> {
               title: Text('Entry ${habitList[index].title}'),
               value: habitList[index].completed,
               controlAffinity: ListTileControlAffinity.leading,
-              onChanged:(bool? value) {
+              onChanged: (bool? value) {
                 setState(() {
                   habitList[index].completed = value!;
                 });
               },
             ),
           );
-        }
-    );
+        });
   }
 }
