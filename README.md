@@ -11,7 +11,7 @@ Graph of trends (how concise the habits were)
 
 
 # TODO LIST
-
+replace [ ] with " [ x ]" when complete 
 ## Dashboard Page
 - [ ] Implement Mood Canvas title/Logo
 - [ ] Add Journal section with:
