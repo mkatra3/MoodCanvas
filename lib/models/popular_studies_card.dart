@@ -25,7 +25,7 @@ class _PopStudiesCardState extends State<PopStudiesCard> {
           borderRadius: BorderRadius.circular(30.0),
           image: DecorationImage(
             fit: BoxFit.fill,
-            image: NetworkImage(widget.data.urlToImage!),
+            image: NetworkImage(widget.data.urlToImage),
           ),
         ),
         child: Container(
@@ -43,7 +43,7 @@ class _PopStudiesCardState extends State<PopStudiesCard> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                widget.data.title!,
+                widget.data.title,
                 style: const TextStyle(
                   color: Colors.white,
                   fontSize: 18,
@@ -54,7 +54,7 @@ class _PopStudiesCardState extends State<PopStudiesCard> {
                 height: 8.0,
               ),
               Text(
-                widget.data.author!,
+                widget.data.author,
                 style: const TextStyle(
                   color: Colors.white54,
                   fontSize: 14,

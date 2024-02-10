@@ -31,7 +31,7 @@ class _HabitsPage extends State<HabitsPage> {
       appBar: AppBar(
         title: const Text('Habits'),
       ),
-      drawer: AppDrawer(), // Add the AppDrawer here
+      drawer: const AppDrawer(), // Add the AppDrawer here
       body: const Row(children: [
         Flexible(
           flex: 3,

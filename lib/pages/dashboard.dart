@@ -14,6 +14,8 @@ Journal placeholderObject = Journal(habbits: [], journals: [
 ], emoji: "");
 
 class DashboardPage extends StatelessWidget {
+  const DashboardPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,7 +30,7 @@ class DashboardPage extends StatelessWidget {
             flex: 1,
             child: Container(
                 margin: const EdgeInsets.all(15),
-                child: Row(
+                child: const Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: <Widget>[
                     ImagePlaceholder(),
@@ -51,6 +53,8 @@ class DashboardPage extends StatelessWidget {
 }
 
 class ImagePlaceholder extends StatelessWidget {
+  const ImagePlaceholder({super.key});
+
   @override
   Widget build(BuildContext context) {
     return const Image(

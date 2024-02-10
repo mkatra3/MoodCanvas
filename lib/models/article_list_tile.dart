@@ -35,13 +35,13 @@ class _ArticleTileState extends State<ArticleTile> {
             Flexible(
               flex: 3,
               child: Hero(
-                tag: "${widget.data.title}",
+                tag: widget.data.title,
                 child: Container(
                   height: 100.0,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(8.0),
                     image: DecorationImage(
-                      image: NetworkImage(widget.data.urlToImage!),
+                      image: NetworkImage(widget.data.urlToImage),
                       fit: BoxFit.fitHeight,
                     ),
                   ),
@@ -56,14 +56,14 @@ class _ArticleTileState extends State<ArticleTile> {
                 child: Column(
                   children: [
                     Text(
-                      widget.data.title!,
+                      widget.data.title,
                       style: const TextStyle(
                           color: Colors.white, fontWeight: FontWeight.bold),
                     ),
                     const SizedBox(
                       height: 8.0,
                     ),
-                    Text(widget.data.content!,
+                    Text(widget.data.content,
                         overflow: TextOverflow.ellipsis,
                         style: const TextStyle(
                           color: Colors.white54,

@@ -12,6 +12,7 @@ dependencies:
   table_calendar: ^3.0.0 # Check for the latest version
   provider: ^6.1.1
   carousel_slider: ^4.2.1
+  google_fonts:
 dev_dependencies:
   flutter_test:
     sdk: flutter
