@@ -7,7 +7,7 @@ class DashboardPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('My Canvas'),
+        title: Text('John\'s Canvas'),
       ),
       drawer: AppDrawer(), // Add the AppDrawer here
       body: Center(
