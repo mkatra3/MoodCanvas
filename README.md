@@ -15,11 +15,11 @@ replace [ ] with " [ x ]" when complete
 ## Dashboard Page
 - [ ] Implement Mood Canvas title/Logo
 - [ ] Add Journal section with:
-  - [ ] Text boxes
-  - [ ] Central Image display
+  - [x] Text boxes
+  - [x] Central Image display
   - [ ] Image addition via Floating Action Button - Camera
-- [ ] Create Habit bar with Progress loading bar
-  - [ ] Wrap in box and turn vertical
+- [x] Create Habit bar with Progress loading bar
+  - [x] Wrap in box and turn vertical
 - [ ] Implement Floating Action Button - "+" for adding a single journal entry
 - [ ] Add Floating Action Button - Camera to add image in top right corner
 - [ ] Feature to set Mood for the day by clicking to:
@@ -41,7 +41,7 @@ replace [ ] with " [ x ]" when complete
 ## Habits Page
 - [x] Include Checkboxes for the habits
 - [ ] Make habits Editable
-- [ ] Reuse the same progress bar as dashboard page
+- [x] Reuse the same progress bar as dashboard page
 
 ## Resources Page
 - [ ] Create Content feed showing articles
