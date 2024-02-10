@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      initialRoute: '/',
+      initialRoute: '/habits',
       routes: {
         '/': (context) => DashboardPage(),
         '/calendar': (context) => CalendarPage(),
