@@ -1,15 +1,19 @@
 import 'package:flutter/material.dart';
+import '/models/colorTheme.dart';
+import '/models/colors.dart';
 
 class AppDrawer extends StatelessWidget {
+  const AppDrawer({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Drawer(
       child: ListView(
         padding: EdgeInsets.zero,
         children: <Widget>[
-          DrawerHeader(
+          const DrawerHeader(
             decoration: BoxDecoration(
-              color: Colors.blue,
+              color: lightpink,
             ),
             child: Text(
               'Navigation',
@@ -20,29 +24,29 @@ class AppDrawer extends StatelessWidget {
             ),
           ),
           ListTile(
-            leading: Icon(Icons.dashboard),
-            title: Text('Dashboard'),
+            leading: const Icon(Icons.dashboard),
+            title:  const Text('Dashboard', style: TextStyle(color: Colors.black)),
             onTap: () {
               Navigator.pushReplacementNamed(context, '/');
             },
           ),
           ListTile(
-            leading: Icon(Icons.calendar_today),
-            title: Text('Calendar'),
+            leading: const Icon(Icons.calendar_today),
+            title: const Text('Calendar', style: TextStyle(color: Colors.black)),
             onTap: () {
               Navigator.pushReplacementNamed(context, '/calendar');
             },
           ),
           ListTile(
-            leading: Icon(Icons.check_box),
-            title: Text('Habits'),
+            leading: const Icon(Icons.check_box),
+            title: const Text('Habits', style: TextStyle(color: Colors.black)),
             onTap: () {
               Navigator.pushReplacementNamed(context, '/habits');
             },
           ),
           ListTile(
-            leading: Icon(Icons.library_books),
-            title: Text('Resources'),
+            leading: const Icon(Icons.library_books),
+            title: const Text('Resources', style: TextStyle(color: Colors.black)),
             onTap: () {
               Navigator.pushReplacementNamed(context, '/resources');
             },
