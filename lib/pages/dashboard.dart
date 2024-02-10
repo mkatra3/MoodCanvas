@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:moodcanvas/widgets/inputDialog.dart';
 import 'package:provider/provider.dart';
 import '../appState.dart';
 import '../models/journal.dart';
@@ -38,7 +39,25 @@ class DashboardPage extends StatelessWidget {
       )),
       floatingActionButton: FloatingActionButton(
         child: const Icon(Icons.add),
-        onPressed: () {},
+        onPressed: () {
+        showDialog(
+            context: context,
+            builder: (BuildContext context) {
+              return CustomAlertDialog(placeholderText: 'Enter text...');
+            },
+          ).then((result) {
+            if (result != null) {
+              // Handle the result (entered text)
+              // userInputText = result;
+              print('User input: $result');
+              Provider.of<AppData>(context, listen: true).addEntry(result);
+              // setState(() {
+              //   habitList.add(result);
+              // });
+              
+            }
+          });
+        },
       ),
     );
   }
