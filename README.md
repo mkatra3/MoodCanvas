@@ -20,17 +20,18 @@ replace [ ] with " [ x ]" when complete
   - [ ] Image addition via Floating Action Button - Camera
 - [ ] Create Habit bar with Progress loading bar
   - [ ] Wrap in box and turn vertical
-- [ ] Design Side bar with:
-  - [ ] Avatars for profile
-  - [ ] Home Button
-  - [ ] Habit Button
-  - [ ] Calendar Button
-  - [ ] Resources Button
 - [ ] Implement Floating Action Button - "+" for adding a single journal entry
 - [ ] Add Floating Action Button - Camera to add image in top right corner
 - [ ] Feature to set Mood for the day by clicking to:
   - [ ] Rate day from 1-5
   - [ ] Use smiley faces for ratings?
+
+## Side bar
+  - [ ] Avatars for profile
+  - [x] Home Button
+  - [x] Habit Button
+  - [x] Calendar Button
+  - [x] Resources Button
 
 ## Calendar Page
 - [ ] Develop Day tracking feature
