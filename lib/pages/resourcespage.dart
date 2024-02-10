@@ -4,7 +4,7 @@ import '../models/popular_studies_card.dart'; // Adjust the import path as neede
 import '../models/article_list_tile.dart'; // Adjust the import path as needed
 import '../models/article_data.dart'; // Adjust the import path as needed
 import '../widgets/app_drawer.dart'; // Ensure this is the correct path to your AppDrawer widget
-import '../models/article.dart'; // Import the Article model
+// Import the Article model
 
 class ResourcesPage extends StatelessWidget {
   const ResourcesPage({Key? key}) : super(key: key);
@@ -28,7 +28,7 @@ class ResourcesPage extends StatelessWidget {
               ))
         ],
       ),
-      drawer: AppDrawer(), // Add the AppDrawer here
+      drawer: const AppDrawer(), // Add the AppDrawer here
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(16),

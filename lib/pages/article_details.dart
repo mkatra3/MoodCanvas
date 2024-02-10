@@ -4,7 +4,7 @@ import '/models/article_data.dart'; // Ensure this path matches your project str
 class ArticleDetailsScreen extends StatefulWidget {
   final ArticleData data; // Assuming ArticleData is correctly defined with the necessary fields
 
-  ArticleDetailsScreen(this.data, {Key? key}) : super(key: key);
+  const ArticleDetailsScreen(this.data, {Key? key}) : super(key: key);
 
   @override
   State<ArticleDetailsScreen> createState() => _ArticleDetailsScreenState();
@@ -16,11 +16,11 @@ class _ArticleDetailsScreenState extends State<ArticleDetailsScreen> {
     return Scaffold(
       appBar: AppBar(
         // Adding an AppBar
-        title: Text('Article Details'), // You can customize this title
+        title: const Text('Article Details'), // You can customize this title
         backgroundColor: Colors.transparent, // Makes AppBar background transparent
         elevation: 0, // Removes shadow
         leading: IconButton(
-          icon: Icon(Icons.arrow_back, color: Colors.black), // Customizes back button color
+          icon: const Icon(Icons.arrow_back, color: Colors.black), // Customizes back button color
           onPressed: () => Navigator.of(context).pop(), // Navigates back to previous screen
         ),
       ),

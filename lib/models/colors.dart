@@ -15,7 +15,6 @@ import 'package:flutter/material.dart';
 
 
 // Example conversion of hex colors to Flutter Color objects
-import 'package:flutter/material.dart';
 
 // Define your colors
 const Color tan = Color(0xFFF3DFCD);

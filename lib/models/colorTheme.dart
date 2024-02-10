@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'colors.dart'; // Assuming this file contains your Color objects
+import 'colors.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 final ThemeData appTheme = ThemeData.from(
-  colorScheme: ColorScheme.light(
+  colorScheme: const ColorScheme.light(
     primary: orange,
     onPrimary: Colors.white, // Ideal for text/icons on top of primary color
     secondary: orange,
@@ -14,15 +15,13 @@ final ThemeData appTheme = ThemeData.from(
     surface: blueish,
     onSurface: Colors.black, // Ideal for text/icons on top of surface color
   ),
+  textTheme: GoogleFonts.poppinsTextTheme(), // Apply Google Fonts to the entire app
 ).copyWith(
   // Apply additional customizations that ThemeData.from might not cover
-  appBarTheme: AppBarTheme(
+  appBarTheme: const AppBarTheme(
     color: orange, // For AppBar background
     foregroundColor: Colors.black, // For AppBar text/icons
   ),
-  textTheme: TextTheme(
-    bodyLarge: TextStyle(color: green2),
-    bodyMedium: TextStyle(color: Colors.black),
-  ),
+
   // Further customizations if needed
 );
