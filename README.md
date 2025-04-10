@@ -1,49 +1,67 @@
-# MoodCanvas
-Sparkhacks project Track 1: Mindful Tech route with modifications
+# 🎨 MoodCanvas
 
+A mindful tech mobile application built with Flutter for the UIC Sparkhacks 2024 (Track 1: Mindful Tech).
 
-Mobile application 
-Journaling, habit and mood tracking
-Entries over multiple days in a calendar
-Graph of trends (how concise the habits were)
+## 📝 About
 
+MoodCanvas is a comprehensive mental wellness application that combines journaling, habit tracking, and mood monitoring features to help users maintain better mental health awareness and personal growth.
 
+## ✨ Features
 
+### 📊 Dashboard
 
-# TODO LIST
-replace [ ] with " [ x ]" when complete 
-## Dashboard Page
-- [ ] Implement Mood Canvas title/Logo
-- [ ] Add Journal section with:
-  - [x] Text boxes
-  - [x] Central Image display
-  - [ ] Image addition via Floating Action Button - Camera
-- [x] Create Habit bar with Progress loading bar
-  - [x] Wrap in box and turn vertical
-- [ ] Implement Floating Action Button - "+" for adding a single journal entry
-- [ ] Add Floating Action Button - Camera to add image in top right corner
-- [ ] Feature to set Mood for the day by clicking to:
-  - [ ] Rate day from 1-5
-  - [ ] Use smiley faces for ratings?
+- Personal mood tracking with intuitive rating system
+- Journal entries with text and image support
+- Daily habit progress tracking
+- Quick-access camera integration for visual journaling
 
-## Side bar
-- [ ] Avatars for profile
-- [x] Home Button
-- [x] Habit Button
-- [x] Calendar Button
-- [x] Resources Button
+### 📈 Personal Tracking
 
-## Calendar Page
-- [ ] Develop Day tracking feature
-- [ ] Implement Graph showing record
-- [ ] Add Timeline of when recordings were made
+- Calendar view for tracking daily entries and progress
+- Visual graphs showing mood and habit trends
+- Timeline view of recorded activities
 
-## Habits Page
-- [x] Include Checkboxes for the habits
-- [ ] Make habits Editable
-- [x] Reuse the same progress bar as dashboard page
+### ⚡ Habit Management
 
-## Resources Page
-- [ ] Create Content feed showing articles
-  - [ ] Filter content based on user preferences?
-- [ ] Link to UIC resources connecting to UIC website
+- Customizable habit tracking
+- Progress visualization
+- Daily habit checkboxes
+- Detailed progress statistics
+
+### 📚 Resources
+
+- Curated wellness content feed
+- Integration with UIC mental health resources
+- Personalized content recommendations
+
+### 🎯 User Experience
+
+- Intuitive sidebar navigation
+- Customizable user profiles
+- Seamless mobile experience
+
+## 🛠️ Tech Stack
+
+- Flutter
+- Dart
+- Material Design
+
+## 👥 Team
+
+This project was created during UIC Sparkhacks 2024 by:
+
+- [Umar Khan](https://www.linkedin.com/in/umarkhan394/)
+- Annie
+- Bilal
+- Bader
+- Two additional team members
+
+We're proud to have collaborated on this project during the hackathon's Mindful Tech track.
+
+## 🤝 Contributing
+
+This project was created during UIC Sparkhacks 2024. Feel free to contribute by submitting issues or pull requests.
+
+## 📫 Project Status
+
+Currently in active development. Project features are being implemented and refined based on user feedback and testing.
